@@ -1,0 +1,30 @@
+string longestPalindrome(string str) {
+    
+    int maxi=0;
+    string res="";
+    
+    for(int i=0;i<str.size();i++)
+    {
+        
+        for(int j=i-maxi;j>=0;j--)
+        {
+            int lo=j,hi=i;
+            bool flag=0;
+            
+            while(lo<hi)
+            {
+                if(str[lo]!=str[hi]) {flag=1;break;}
+                lo++;
+                hi--;
+            }
+            if(!flag)
+            {
+                if(maxi<(i-j+1)) {maxi=i-j+1; res=str.substr(j,i-j+1);}
+            }
+            
+            
+        }
+    }
+    return res;
+    
+}
