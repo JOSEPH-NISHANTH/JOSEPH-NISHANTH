@@ -1,0 +1,38 @@
+class Solution:
+    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+        num1 = []
+        num2 = []
+        
+        head = l1
+        
+        while l1 != None :
+            num1.append(l1.val)
+            l1 = l1.next
+        while l2 != None :
+            num2.append(l2.val)
+            l2 = l2.next
+        
+        num1 = num1[::-1]
+        num2 = num2[::-1]
+        
+
+        num1 = int(''.join(map(str,num1)))
+        num2 = int(''.join(map(str,num2)))
+
+        
+        num3 = num1+num2
+
+        
+        num3 = list(map(int,str(num3)))[::-1]
+
+        
+
+        i = 0 
+        curr = head = ListNode(0)
+        while i < len(num3) :
+            curr.next = ListNode(num3[i])
+            curr = curr.next
+            i += 1
+        
+        return head.next
+        """
