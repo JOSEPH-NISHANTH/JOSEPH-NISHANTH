@@ -1,0 +1,11 @@
+    function createCounter(n){
+    return function() {
+        return n++;
+        
+    };
+
+}
+const mCounter = createCounter(10);
+console.log(mCounter());
+console.log(mCounter());
+console.log(mCounter());
